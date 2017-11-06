@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="http://i122.photobucket.com/albums/o260/mhilka/minigifs/balaozinho38.gif">
+		<title>Question!</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+		<style type="text/css" />
+		<!--
+		// -->
+		</style>
+
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	
+		<script>
+			$(document).ready(function(){
+				//create fin to prevent the circle animation from starting over every time that you scroll. When page loads, it is false because the animation that occurs when you first scroll has not occurred yet.
+				var fin=false;
+				//set the booleans for toggling the tabs to all false because they are all closed
+				var whoopen=false;
+				var whatopen=false;
+				var whereopen=false;
+				var whenopen=false;
+				var whyopen=false;
+				var howopen=false;
+				//make function clickspin, which causes the cicle animation to orbit.
+				function clickspin() {
+					//add a webkit animation with the name, spin, for 2 seconds to #circlewhole
+					$( '#circlewhole' ).css( '-webkit-animation','spin 2s ease-in-out');
+					//add a webkit animation with the name, spin3, for 2 seconds to #circle
+					$( '#circle' ).css( '-webkit-animation','spin3 2s ease-in-out');
+					//add a webkit animation with the name, circtravel, for 5 seconds to #circle3
+					$( '#circle3' ).css( '-webkit-animation','circtravel 5s ease-in-out');
+					//add a webkit animation with the name, spin2, for 0.5 seconds to #circleout
+					$( '#circleout2' ).css( '-webkit-animation','spin2 0.5s ease-in-out');
+					//set -webkit-animation to none for #circlewhoe,#circle,#circle3, and #circleout2 after their animations are finished. This allows the animation to occur again when function is called on for the second time.
+					setTimeout( function(){$('#circlewhole').css('-webkit-animation','none');},2000);
+					setTimeout( function(){$('#circle').css('-webkit-animation','none');},2000);
+					setTimeout( function(){$('#circle3').css('-webkit-animation','none');},5000);
+					setTimeout( function(){$('#circleout2').css('-webkit-animation','none');},500);	
+				}
+
+				$(window).scroll(function() {
+					//set the variable tophight to the height from the top in pixels
+					var topheight = $(window).scrollTop();
+					//if the topheight is more than 10 pixels, carry out this code.
+    					if(topheight  > 10) {
+						//set the element with .topbar 270 pixels from the top.
+        					$( '.topbar' ).animate({ top:'270px'});
+						//set the element with .toppart to have a height of 270px
+						$( '.toppart' ).animate({ height:'270px'});
+						//make the element with #speech disappear
+						$( '#speech' ).animate({ opacity:'0'});
+						
+						//if the circle animation has not yet occured after beginning to scroll, carry out this code.
+						if(fin==false) {
+							//set -webkit-animation name to spin and have it run for 5 seconds for the element with #circlewhole
+							$( '#circlewhole' ).css( '-webkit-animation','spin 5s ease-out');
+							//set -webkit-animation name to spin3 and have it run for 7 seconds for the element with #circle
+							$( '#circle' ).css( '-webkit-animation','spin3 7s ease-out');
+							//set -webkit-animation name to circtravel and have it run for 5 seconds for the element with #circle3
+							$( '#circle3' ).css( '-webkit-animation','circtravel 5s ease-out');
+							//set -webkit-animation name to spin2 and have it run for 5 seconds for the element with #circleout
+							$( '#circleout2' ).css( '-webkit-animation','spin2 5s ease-out');
+
+							//set -webkit-animation to none for #circlewhoe,#circle,#circle3, and #circleout2 after their animations are finished. This allows the animation to occur again when function is called on for the second time.
+							setTimeout( function(){$('#circlewhole').css('-webkit-animation','none');},5000);
+							setTimeout( function(){$('#circle').css('-webkit-animation','none');},7000);
+							setTimeout( function(){$('#circle3').css('-webkit-animation','none');},5000);
+							setTimeout( function(){$('#circleout2').css('-webkit-animation','none');},5000);
+							//set fin to true so that this does not repeat.	
+							fin=true;			
+ 						}
+					}
+				});
+				
+				
+				//when the who button is clicked
+				$( '#button1' ).click(function() {
+					//if the who tab is closed
+					if(whoopen==false){
+						//set the tab's height to 520px / expand it
+						$('.block1').animate({height:'520px'});
+						//set the variable whoopen to true
+						whoopen=true;
+					}
+					else {
+						//if not, set the tab's height to 120px / minimize it and set the variable whoopen to false
+						$('.block1').animate({height:'120px'});
+						whoopen=false;
+					}
+					//have the "button" fade out for 0.1 and fade back in for 1.5s. Then, call the clickspin() function. 
+  					$( this ).fadeOut( 100 );
+ 					$( this ).fadeIn( 1500 );
+  					clickspin();
+				});
+
+				//when the what button is clicked
+				$( '#button2' ).click(function() {
+					//if the what tab is closed
+					if(whatopen==false){
+						//set the tab's height to 720px / expand it
+						$('.break1').animate({height:'720px'});
+						//set the variable whatopen to true
+						whatopen=true;
+					}
+					else {
+						//if not, set the tab's height to 120px / minimize it and set the variable whatopen to false
+						$('.break1').animate({height:'120px'});
+						whatopen=false;
+					}
+					//have the "button" fade out for 0.1 and fade back in for 1.5s. Then, call the clickspin() function. 
+  					$( this ).fadeOut( 100 );
+ 					$( this ).fadeIn( 1500 );
+					clickspin();
+				});
+
+				//when the where button is clicked
+				$( '#button3' ).click(function() {
+					if(whereopen==false){
+						//set the tab's height to 620px / expand it
+						$('.block2').animate({height:'620px'});
+						//set whereopen to true
+						whereopen=true;
+					}
+					else {
+						//if not, set the tab's height to 120px / minimize it and set the variable whereopen to false
+						$('.block2').animate({height:'120px'});
+						whereopen=false;
+					}
+					//have the "button" fade out for 0.1 and fade back in for 1.5s. Then, call the clickspin() function. 
+  					$( this ).fadeOut( 100 );
+ 					$( this ).fadeIn( 1500 );
+					clickspin();
+				});
+
+				//when the when button is clicked
+				$( '#button4' ).click(function() {
+					if(whenopen==false){
+						//set the tab's height to 520px / expand it
+						$('.break2').animate({height:'520px'});
+						whenopen=true;
+					}
+					else {
+						//if not, set the tab's height to 120px / minimize it and set the variable whenopen to false
+						$('.break2').animate({height:'120px'});
+						//set whenopen to true
+						whenopen=false;
+					}
+					//have the "button" fade out for 0.1 and fade back in for 1.5s. Then, call the clickspin() function. 
+  					$( this ).fadeOut( 100 );
+ 					$( this ).fadeIn( 1500 );
+					clickspin();
+				});
+
+				//when the why button is clicked
+				$( '#button5' ).click(function() {
+					if(whyopen==false){
+						//set the tab's height to 720px / expand it
+						$('.block3').animate({height:'720px'});
+						//set whyopen to true
+						whyopen=true;
+					}
+					else {
+						//if not, set the tab's height to 120px / minimize it and set the variable whyopen to false
+						$('.block3').animate({height:'120px'});
+						whyopen=false;
+					}
+					//have the "button" fade out for 0.1 and fade back in for 1.5s. Then, call the clickspin() function. 
+  					$( this ).fadeOut( 100 );
+ 					$( this ).fadeIn( 1500 );
+					clickspin();
+				});
+
+				//when the how button is clicked
+				$( '#button6' ).click(function() {
+					if(howopen==false){
+						//set the tab's height to 720px / expand it
+						$('.break3').animate({height:'720px'});
+						//set howopen to true
+						howopen=true;
+					}
+					else {
+						//if not, set the tab's height to 120px / minimize it and set the variable howopen to false
+						$('.break3').animate({height:'120px'});
+						howopen=false;
+					}
+					//have the "button" fade out for 0.1 and fade back in for 1.5s. Then, call the clickspin() function. 
+  					$( this ).fadeOut( 100 );
+ 					$( this ).fadeIn( 1500 );
+					clickspin();
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+	
+		<div class="toppart">
+			
+			<div class="circwhole2">
+				<div id="speech">
+					Hey you! Have you ever wondered, "hmmm.... I would like to know <span style="text-decoration:underline;color:#81C2F0">some answers to a bunch of random questions</span> that I've probably never really asked (but are still interesting...kinda)"???? Well then today's your lucky day! <br/><span style="text-decoration:underline;color:#F08181">Scroll down to see some!</span>
+				</div>
+				<div id="circlewhole">
+					<div id="circleout">
+						<div id="circle">
+							<div id="circle4">
+							</div>
+							<div id="circleout2">
+								<div id="circle3">
+									<div class="outercirc">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="circle2">
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="bgopacity"></div>			
+	<div class="bars">
+		<div class="topbar">
+			<div class="title">Question!</div>
+				<div class="buttons">
+					<a id="button1">toggle who</a>
+					<a id="button2">toggle what</a>
+					<a id="button3">toggle where</a>
+					<a id="button4">toggle when</a>
+					<a id="button5">toggle why</a>
+					<a id="button6">togle how</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="contain">
+       	 	<div id="blocks1">
+        		<div class="block1">
+				<div class="whoall">
+					<div class="sideline1"></div>
+					<div class="who">Who?</div>
+					<div class="who2">what<br>person <br>or persons?</div>
+					<div class="sideline2"></div>
+				</div>	
+        			<div class="content">
+					<h2>who invented the waffle?</h2>
+					<p>Liege waffles, the most popular contemporary Belgian waffle variety, are rumored to have been invented during the 18th century, as well, by the chef to the prince-bishop of Liege.</p>
+					<h2>who was the first scientist to propose that the universe is expanding?" </h2>
+					<p>Edwin Hubble published a velocity-distance relation that strongly supported an expanding universe and, consequently, the Big Bang theory.</p>
+					<h2>who is actually going to read all of this?</h2>
+					<p>*whispers* even I didn't ><;; </p>
+				</div>
+       			 </div>
+
+       			 <div class="break1">
+				<div class="whatall">
+					<div class="sideline1"></div>
+					<div class="what">What?</div>
+					<div class="what2"><span style="background-color:#81F0D4;">used interrogatively<br> as a request for<br> specific information</span></div>
+					<div class="sideline2"></div>
+				</div>
+				<div class="content">
+					<h2>What is OK short for?</h2>
+					<p><span style="color:#fff;background-color:#888">The most popular theory is that OK comes from 'oll korrect', a deliberately misspelled writing of 'all correct'. It was popularised in Boston newspapers around the 1840s when it was fashionable to go around spelling things incorrectly for humorous effect. Legend also has it that New York Democrats later adopted the abbreviation to promote their candidate Martin Van Buren - the initials 'OK' were derived from his nickname, Old Kinderhook.</span></p>
+					<h2>What is a hiccup?</h2>
+					<p><span style="color:#fff;background-color:#888">A hiccup comes from an involuntary contraction of the diaphragm, producing asudden intake of air. The glottis (the vocal apparatus of the larynx) slams shut at the same time, so that the column of air strikes the closed glottis to produce the characteristic, onomatopoeic noise.</span></p>
+					<h2>What if Earth were twice as big?</h2>
+					<p><span style="color:#fff;background-color:#888">If Earth's diameter were doubled to about 16,000 miles, the planet's mass would increase eight times, and the force of gravity on the planet would be twice as strong. All the plants and animals that currently exist would collapse under their own doubled weight, and new, stockier species would arise.</span></p>
+					<h2>What am I even doing with my life.</h2>
+					<p><span style="color:#fff;background-color:#888">I feel you. ; n ; </span></p>
+				</div>
+			</div>
+		
+        		 <div class="block2">
+				<div class="whereall">
+					<div class="sideline1"></div>
+					<div class="who">Where?</div>
+					<div class="who2">in or <br>at what <br>place?:</div>
+					<div class="sideline2"></div>
+				</div>
+				<div class="content">
+					<h2>Where do phobias come from?</h2>
+					<p>Around 10 per cent of the population suffer from phobias. Some may be triggered by a traumatic event while others are linked to physical problems. Studies suggest that simple phobias are partly genetic while others may be due to cultural history. For example, a fear of spiders may be passed down from the Middle Ages when spiders were associated with the plague, as victims' deserted homes became shrouded in cobwebs.</p>
+					<h2>Where is the safest place to stand outside in a thunderstorm?</h2>
+					<p>Tall, pointy objects standing alone in an open space are more likely to get struck by lightning but it's by no means a certainty. Sometimes the flat ground next to a tall tree can be hit. A car or other enclosed metal structure is the safest place to be in a thunderstorm. Failing that, a ditch, trench or group of shrubs of uniform height is better than nothing. Keep away from boundary areas between dissimilar terrain (water and land; rock and earth; trees and fields). Also keep at least five metres away from metal objects or other people as lightning will often jump from one object to another.</p>
+					<h2>Where did you get all these answers?</h2>
+					<p>I copied and pasted most of them from the interwebs! c: I'm not actually nearly this smart *sobs*</p>
+				</div>
+			</div>
+
+        		<div class="break2">
+				<div class="whenall">
+					<div class="sideline1"></div>
+					<div class="what">When?</div>
+					<div class="what2"><span style="background-color:#81F0D4;">at what time or period? <br>how long ago?<br> how soon?:</span></div>
+					<div class="sideline2"></div>
+				</div>
+				<div class="content">
+					<h2>When will the universe end?</h2>
+					<p><span style="color:#fff;background-color:#888">One theory of how the universe could potentially end relies on the assumption that the expansion of the universe will continue indefinitely until the galaxies, stars, planets, and matter (potentially even the subatomic building blocks that comprise all matter) can no longer hold themselves together; so they rip apart.</span></p>
+					<h2>When do humans stop growing?</h2>
+					<p><span style="color:#fff;background-color:#888">This usually happens at the average age of 16 years for girls and 18 years for boys. As for me, I don't think I was ever growing ^^; </span></p>
+					<h2>when was the first traffic light installed?</h2>
+					<p><span style="color:#fff;background-color:#888">The first electric traffic light was developed in 1912 by Lester Wire, a policeman in Salt Lake City, Utah, who also used red-green lights. On 5 August 1914, the American Traffic Signal Company installed a traffic signal system on the corner of East 105th Street and Euclid Avenue in Cleveland, Ohio.</span></p>
+					
+				</div>
+			</div>
+			<div class="block3">
+				<div class="whyall">
+					<div class="sideline1"></div>
+					<div class="who">Why?</div>
+					<div class="who2">for what? <br>for what reason,<br> cause, or purpose?:</div>
+					<div class="sideline2"></div>
+				</div>
+				<div class="content">
+					<h2>Why do identical twins have different fingerprints?</h2>
+					<p>
+						Although identical twins share the same DNA, they don't look identical cell-for-cell, because not every aspect of your physical appearance is rigidly determined by your genes. Fingerprints are formed semi-randomly as the foetus develops in the womb andare affected by such things as chance fluctuations of hormone levels. Similarly, the pattern of freckles and moles on the skin is caused by random mutations and will vary between identical twins.
+					</p>
+					<h2>Why do fingers and toes wrinkle when left in water?</h2>
+					<p>The waterproof coating on our skin gets rubbed away from areas of our bodies like our hands and feet that are frequently in contact with objects. If you immerse yourself in water with a lower concentration of dissolved salts than that of your cell contents, water will be absorbed by osmosis and cause your skin cells to swell. Since they are anchored to the tissues below, they are forced to corrugate to accommodate this.</p>
+					<h2>Why can't we just fill in the ozone hole with man-made ozone?</h2>
+					<p>The sheer scale of the notorious hole - or, more accurately, depleted region - in the Earth's ozone layer over the Antarctic beggars belief. At its peak each September, it spans an area bigger than the continental United States, and tens of millions of tonnes of ozone would be needed to fill it up again. Simply creating that amount of ozone, let alone getting it where it's needed, would be astronomically expensive.</p>
+				</div>
+			</div>
+        		<div class="break3">
+				<div class="howall">
+					<div class="sideline1"></div>
+					<div class="what">How?</div>
+					<div class="what2"><span style="background-color:#81F0D4;">in what way <br>or manner; <br>by what means?</span></div>
+					<div class="sideline2"></div>
+				</div>
+				<div class="content">
+					<h2>How are you?</h2>
+					<p><span style="color:#fff;background-color:#888">DYINNGGGG</span></p>
+					<h2>How do you only have like 2 questions for this section??? And they're not even informational?? </h2>
+					<p><span style="color:#fff;background-color:#888">I got lazy.</span></p>
+					
+				</div>
+       			 </div>
+		
+       		 </div>
+	
+	</body>
+</html>
