@@ -1,2 +1,2 @@
 # FAQSite
-I used CSS animations and JQuery to design a website that addresses some random questions you probably never thought to ask! (This was from a long time ago and I can no longer find the source of the questions, but I didn't write most of the answers)
+I used CSS animations and JQuery to design a website that addresses some random questions you probably never thought to ask! All of the answers are from http://www.telegraph.co.uk/news/newstopics/howaboutthat/4696372/Greatest-101-questions-of-all-time-1-20.html

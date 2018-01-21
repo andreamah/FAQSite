@@ -30,6 +30,18 @@ body {
 	z-index:3;
 }  
 
+.content a {
+    color:#888;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.content a:hover {
+    color:#ddd;
+    
+    text-decoration:none;
+    transition:0.3s;
+}
 
 .circwhole2 {
 	left:45%;
